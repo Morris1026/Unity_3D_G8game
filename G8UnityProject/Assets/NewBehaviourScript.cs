@@ -18,6 +18,12 @@ public class NewBehaviourScript : MonoBehaviour
         print("弓箭屬性:" + prop);
         print("弓箭方向:" + direction);
     }
+    
+
+    private int Square(int number = 2)
+    {
+        return number * number;
+    }
 
     // Update is called once per frame
     private void Start()
@@ -31,6 +37,12 @@ public class NewBehaviourScript : MonoBehaviour
         Shoot(1, 5.1f);
         Shoot(10, 10.5f);
         Shoot(3, 2, direction: "前後方");
+
+
+        print(Square());
+
+        int result = Square(9);
+        print(result);
 
     }
 } 

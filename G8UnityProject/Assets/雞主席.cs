@@ -11,4 +11,29 @@ public class 雞主席 : MonoBehaviour
     public bool mission;
     public string name = "雞主席";
 
+
+    private void Run()
+    {
+
+    }
+
+    private void Turn()
+    {
+
+    }
+
+    private void Bark()
+    {
+
+    }
+
+    private void Catch()
+    {
+
+    }
+
+    private void Task()
+    {
+
+    }
 }
