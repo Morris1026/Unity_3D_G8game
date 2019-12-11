@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\LA.cs" />
+    <Compile Include="Assets\LearnAPI.cs" />
     <Compile Include="Assets\LearnIF.cs" />
     <Compile Include="Assets\LearnOperator.cs" />
     <Compile Include="Assets\NewBehaviourScript.cs" />
