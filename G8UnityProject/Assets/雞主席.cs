@@ -6,14 +6,16 @@ public class 雞主席 : MonoBehaviour
 {
     [Header("移動速度")][Range(1,2500)]
     public int speed = 10;
-    [Tooltip("雞主席的旋轉速度"),Range(1.5f  ,200f)]
+    [Header("旋轉速度")][Tooltip("雞主席的旋轉速度"),Range(1.5f  ,200f)]
     public float turn = 20.5f;
+    [Header("是否完成任務")]
     public bool mission;
-    public string _name = "雞主席";
+    [Header("玩家名稱")]
+    public new string name = "雞主席";
 
     public Transform tran;
     public Rigidbody rig;
-    public Animation ani;
+    public Animator ani;
 
 
     private void Update()
@@ -22,17 +24,22 @@ public class 雞主席 : MonoBehaviour
         Run();
         Bark();
         Catch();
-        Task();
+       
     }
 
     private void Run()
     {
+        if (ani.GetCurrentAnimatorStateInfo(0).IsName("吃")) return;
+
         float V = Input.GetAxis("Vertical");   //W上1  S下-1  沒按=0
         //rig.Addforce(0,0,speed*v);    //世界座標
         //tran.forword  區域座標Z軸
         //tran.right    區域座標X軸
         //tran.up       區域座標Y軸
         rig.AddForce(tran.forward * speed * V * Time.deltaTime);
+
+        ani.SetBool("走路切換", V != 0);
+
     }
 
     private void Turn()
@@ -43,12 +50,18 @@ public class 雞主席 : MonoBehaviour
 
     private void Bark()
     {
-
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            ani.SetTrigger("拍翅膀");
+        }
     }
 
     private void Catch()
     {
-
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            ani.SetTrigger("吃");
+        }
     }
 
     private void Task()
