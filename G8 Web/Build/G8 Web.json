@@ -1,0 +1,16 @@
+{
+"companyName": "卡仆空",
+"productName": "哪個",
+"productVersion": "0.1",
+"dataUrl": "G8 Web.data.unityweb",
+"wasmCodeUrl": "G8 Web.wasm.code.unityweb",
+"wasmFrameworkUrl": "G8 Web.wasm.framework.unityweb",
+"graphicsAPI": ["WebGL 2.0","WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20",
+"cacheControl": {"default": "must-revalidate"},
+"developmentBuild": false,
+"multithreading": false,
+"unityVersion": "2019.2.13f1"
+}
