@@ -26,6 +26,29 @@ public class 雞主席 : MonoBehaviour
         Catch();
        
     }
+    [Header("撿東西位置")]
+    public Rigidbody rigCatch;
+
+
+    private void OnTriggerStay(Collider other)
+    {
+        print(other.name);
+
+        if (other.name == "蝦子" && ani.GetCurrentAnimatorStateInfo(0).IsName("吃"))
+        {
+            Physics.IgnoreCollision(other, GetComponent<Collider>());
+            //物理 忽視碰撞
+
+            other.GetComponent<HingeJoint>().connectedBody = rigCatch;
+
+        }
+        if (other.name == "沙子" && ani.GetCurrentAnimatorStateInfo(0).IsName("吃"))
+        {
+           
+
+            GameObject.Find("蝦子").GetComponent<HingeJoint>().connectedBody = null;
+        }
+    }
 
     private void Run()
     {
